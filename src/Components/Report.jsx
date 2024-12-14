@@ -38,14 +38,14 @@ export const Report = () => {
             <h1 className="text-center">Book Register</h1>
             <table className='table'>
 
-                <theader>
-                    <td>
+                <thead>
+                    <tr>
                         <th>Title</th>
                         <th>Author</th>
                         <th>Genre</th>
                         <th>Publication</th>
-                    </td>
-                </theader>
+                    </tr>
+                </thead>
                 <tbody>
 
                     {
