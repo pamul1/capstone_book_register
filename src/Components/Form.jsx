@@ -5,10 +5,14 @@ export const Form = () => {
     const [title, setTitle] = useState("")
     const [author, setAuthor] = useState("")
     const [genre, setGenre] = useState("")
-    const [publication, setPublication] = useState("")
+    const [publication_year, setPublication] = useState("")
 
     let url = import.meta.env.VITE_URL
     let token = import.meta.env.VITE_TOKEN
+
+    
+    const username = localStorage.getItem("username")
+    
 
     const changeHandlerTitle = (event) => {
         setTitle(event.target.value)
@@ -35,7 +39,8 @@ export const Form = () => {
             title,
             author,
             genre,
-            publication
+            publication_year,
+            username
         }
 
         let newURL = `${url}/book_register`
@@ -58,7 +63,6 @@ export const Form = () => {
 
         } else {
             let err = await response.json()
-            set(err.message)
             console.log(err)
           }
     }
@@ -87,7 +91,7 @@ export const Form = () => {
 
                     <div className="mb-3">
                         <label className="form-label">Publication</label>
-                        <input onChange={changeHandlerPublication} type="number" className="form-control" value={publication} />
+                        <input onChange={changeHandlerPublication} type="number" className="form-control" value={publication_year} />
                     </div>
 
                     <button className='btn btn-primary w-100' > Send Data </button>

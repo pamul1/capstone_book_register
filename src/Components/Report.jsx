@@ -31,7 +31,7 @@ export const Report = () => {
     useEffect(() => {
         getReport()
 
-    })
+    }, [])
 
     return (
         <>
@@ -44,6 +44,7 @@ export const Report = () => {
                         <th>Author</th>
                         <th>Genre</th>
                         <th>Publication</th>
+                        <th>Username</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -56,6 +57,7 @@ export const Report = () => {
                                 <td>{item.author}</td>
                                 <td>{item.genre}</td>
                                 <td>{item.publication_year}</td>
+                                <td>{item.username}</td>
                             </tr>
 
                         ))
