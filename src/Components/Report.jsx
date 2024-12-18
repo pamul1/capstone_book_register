@@ -11,6 +11,7 @@ export const Report = () => {
     const getReport = async () => {
         let newURL = `${url}/book_register?order=id.desc`
         console.log(newURL)
+        console.log(token)
 
         let response = await fetch(newURL, {
             method: "GET",
@@ -25,7 +26,10 @@ export const Report = () => {
             console.log(data)
             setReport(data)
 
-        }
+        }else {
+            let err = await response.json()
+            console.log(err)
+          }
     }
 
     useEffect(() => {
